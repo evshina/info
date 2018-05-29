@@ -18,7 +18,7 @@
       $sql="SELECT entrant.name_entrant, registration.id_depart
     FROM entrant, registration
     WHERE entrant.name_entrant=registration.name_entrant 
-    AND fio_abit LIKE '%$name%' AND fio LIKE '%$fio%'";
+    AND entrant.name_entrant LIKE '%$name%' AND registration.id_depart LIKE '%$fio%'";
 
 $result = mysqli_query($link, $sql);
 echo "<table border='1'>
