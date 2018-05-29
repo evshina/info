@@ -21,9 +21,9 @@ echo "<table border='1'>
 <tr> 
 <th>number_of_application</th>
 <th>name_entrant</th>
-<th>id_special</th>
 <th>name_special</th>
-<th>info</th>
+<th>delete</th>
+<th>update</th>
 </tr>";
 
 $result = mysqli_query($link, $sql);
@@ -32,9 +32,9 @@ while($row = mysqli_fetch_array($result))
 echo "<tr>";
 echo "<td>" . $row['number_of_application'] . "</td>";
 echo "<td>" . $row['name_entrant'] . "</td>";
-echo "<td>" . $row['id_special'] . "</td>";
 echo "<td>" . $row['name_special'] . "</td>";
-echo "<td>" . $row['info'] . "</td>";
+echo "<td><a href='delete.php?id=" . $row['number_of_application'] . "'>link</a></td>";
+echo "<td><a href='edit.php?id=" . $row['number_of_application'] . "'>link</a></td>";
 echo "</tr>";
 }
 
