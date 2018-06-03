@@ -4,6 +4,8 @@ require_once 'connection.php';
 $link = mysqli_connect($host, $user, $password, $database) 
     or die ("Ошибка подключения к базе данных" . mysqli_error());
 
+header("Location: list.php");
+
 echo "Вы подключились!<br>";
 
 $id_record = $_GET['id_record'];
@@ -34,7 +36,5 @@ if (mysqli_query($link, $sql)) {
 }
 
 mysqli_close($link);
-
-header("Location: list.php");
 
 ?>
